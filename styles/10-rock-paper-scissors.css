@@ -1,43 +1,98 @@
 body {
-  background-color: rgb(25, 25, 25);
-  color: white;
-  font-family: Arial;
+  position: relative; /* Required for positioning the pseudo-element */
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.title {
-  font-size: 30px;
-  font-weight: bold;
+body::before {
+  content: "";
+  background-image: url('/images/friends.png');
+  opacity: 0.5; /* Adjust the value between 0 (fully transparent) and 1 (fully opaque) */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place the pseudo-element below the content */
+}
 
+
+.title {
+  /* border: 3px solid #fff; */
+  width: 580px;
+  /* background: linear-gradient(to right, rgb(7, 7, 7), #007eff); */
+  font-size: 36px;
+  font-weight: bold;
+  /* padding: 15px; */
+  margin: 45px auto;
+  text-align: center;
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5); */
+}
+
+.subtitle::before {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 30px;
+  background-image: url('/images/Friends_logo.png');
+  background-size: cover;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin: 5px auto;
+  filter: drop-shadow(0 0 5px rgb(187, 255, 0));
 }
 
 .move-icon {
   height: 50px;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  margin-top: 20px; /* Add some spacing between the title and the buttons */
+}
+
 .move-button {
-  background-color: transparent;
-  border: 3px solid white;
+  background: transparent;
+  /* background: linear-gradient(to bottom, rgb(255, 0, 0), #007eff); */
+  border: 3px solid #fff;
   width: 120px;
   height: 120px;
   border-radius: 60px;
   margin-right: 10px;
   cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5); 
+  align-items: center;
+  justify-content: center;
 }
 
 .result {
   font-size: 25px;
   font-weight: bold;
   margin-top: 50px;
+  text-align: center;
 }
 
 .score {
+  font-size: 20px;
+  font-weight: bold;
   margin-top: 60px;
+  text-align: center;
+}
+
+.moves {
+  text-align: center;
 }
 
 .reset-score-button {
-  background-color: white;
+  background: linear-gradient(to bottom, 'white', #007eff);
   border: none;
   font-size: 15px;
+  font-weight: bold;
   padding: 8px 15px;
   cursor: pointer;
+  color: #080808;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 }
